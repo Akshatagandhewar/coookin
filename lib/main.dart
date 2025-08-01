@@ -1,6 +1,10 @@
+<<<<<<< HEAD
 import 'package:cookin/Screen/Hompage.dart';
 import 'package:cookin/Screen/scan.dart';
 import 'package:cookin/Screen/text.dart';
+=======
+import 'package:cookin/Screen/Login_Screen.dart';
+>>>>>>> 8d2899568945f178844ee8532db26b14c0334f55
 
 import 'package:flutter/material.dart';
 
@@ -15,6 +19,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+<<<<<<< HEAD
       title: 'Flutter Demo',
       theme: ThemeData(
         // This is the theme of your application.
@@ -35,6 +40,11 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
       ),
       home:  ScanScreen(),
+=======
+     
+      
+      home:  LoginPage(),
+>>>>>>> 8d2899568945f178844ee8532db26b14c0334f55
     );
   }
 
