@@ -15,7 +15,7 @@ class _ScanScreenState extends State<ScanScreen> {
       isScanning = true;
     });
 
-    Future.delayed( Duration(seconds: 2), () {
+    Future.delayed(Duration(seconds: 2), () {
       setState(() {
         isScanning = false;
       });
@@ -36,14 +36,14 @@ class _ScanScreenState extends State<ScanScreen> {
                 icon: Icon(Icons.arrow_back, color: Colors.white),
                 onPressed: () => Navigator.pop(context),
               ),
-               SizedBox(height: 50),
+              SizedBox(height: 50),
 
               Center(
                 child: GestureDetector(
                   onTap: startScan,
                   child: Container(
-                    width: 200,
-                    height: 200,
+                    width: 310,
+                    height: 303,
                     decoration: BoxDecoration(
                       shape: BoxShape.circle,
                       gradient: LinearGradient(
@@ -61,7 +61,7 @@ class _ScanScreenState extends State<ScanScreen> {
                             )
                           : Icon(
                               Icons.camera_alt_rounded,
-                              size: 80,
+                              size: 150,
                               color: Colors.white,
                             ),
                     ),
@@ -74,7 +74,7 @@ class _ScanScreenState extends State<ScanScreen> {
               Center(
                 child: Text(
                   isScanning ? 'Scanning...' : 'Tap to Scan',
-                  style:  TextStyle(
+                  style: TextStyle(
                     color: Colors.white70,
                     fontSize: 20,
                     fontWeight: FontWeight.w500,
@@ -86,11 +86,9 @@ class _ScanScreenState extends State<ScanScreen> {
               Center(
                 child: ElevatedButton(
                   style: ElevatedButton.styleFrom(
-                    backgroundColor:  Color(0xFF6A5AE0),
-                    padding:  EdgeInsets.symmetric(
-                      horizontal: 40,
-                      vertical: 18,
-                    ),
+                    backgroundColor: Color(0xFF6A5AE0),
+                    minimumSize: Size(357, 57),
+
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(32),
                     ),

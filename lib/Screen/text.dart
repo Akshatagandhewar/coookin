@@ -1,3 +1,4 @@
+import 'package:cookin/App_color/app_color.dart';
 import 'package:flutter/material.dart';
 
 class Textscreen extends StatefulWidget {
@@ -15,7 +16,7 @@ class _TextScreenState extends State<Textscreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0xFF0D0620),
+      backgroundColor: AppColor.primarycolor,
       body: SafeArea(
         child: Padding(
           padding: EdgeInsets.symmetric(horizontal: 20, vertical: 16),
@@ -43,7 +44,7 @@ class _TextScreenState extends State<Textscreen> {
               Center(
                 
                 child: CircleAvatar(
-                  radius: 40,
+                  radius: 60,
                   backgroundColor: Colors.grey,
                   child: Text("📝", style: TextStyle(fontSize: 30)),
                 ),
@@ -52,11 +53,11 @@ class _TextScreenState extends State<Textscreen> {
 
               Center(
                 child: Container(
-                  width: 650,
-                  height: 400,
+                  width: 369,
+                  height: 334,
                   padding: EdgeInsets.symmetric(horizontal: 16),
                   decoration: BoxDecoration(
-                    color: Color(0xFF3A3A3A),
+                    color: Colors.grey,
                     borderRadius: BorderRadius.circular(20),
                   ),
                   child: TextField(
@@ -75,10 +76,11 @@ class _TextScreenState extends State<Textscreen> {
 
               Center(
                 child: ElevatedButton(
+                  
                   onPressed: () {},
                   style: ElevatedButton.styleFrom(
-                    backgroundColor: Colors.grey.shade800,
-                    padding: EdgeInsets.symmetric(horizontal: 32, vertical: 12),
+                    backgroundColor: AppColor.secondarycolor,
+                    minimumSize: Size(357, 57),
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(30),
                     ),
@@ -87,6 +89,7 @@ class _TextScreenState extends State<Textscreen> {
                     'Generate Your Recipe',
                     style: TextStyle(
                       color: Colors.white,
+                      fontSize: 18,
                       fontWeight: FontWeight.bold,
                     ),
                   ),
