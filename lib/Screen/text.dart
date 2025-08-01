@@ -1,0 +1,97 @@
+import 'package:flutter/material.dart';
+
+class Textscreen extends StatefulWidget {
+  Textscreen({Key? key}) : super(key: key);
+
+  @override
+  State<Textscreen> createState() => _IngredientEntryScreenState();
+}
+
+class _IngredientEntryScreenState extends State<Textscreen> {
+  final TextEditingController _ingredientController = TextEditingController();
+
+  int _currentIndex = 0;
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      backgroundColor: Color(0xFF0D0620),
+      body: SafeArea(
+        child: Padding(
+          padding: EdgeInsets.symmetric(horizontal: 20, vertical: 16),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              GestureDetector(
+                onTap: () => Navigator.pop(context),
+                child: Icon(Icons.arrow_back, color: Colors.white, size: 28),
+              ),
+              SizedBox(height: 30),
+
+              Center(
+                child: Text(
+                  'Enter the Ingredients',
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 20,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+              ),
+              SizedBox(height: 20),
+
+              Center(
+                child: CircleAvatar(
+                  radius: 40,
+                  backgroundColor: Colors.grey,
+                  child: Text("📝", style: TextStyle(fontSize: 30)),
+                ),
+              ),
+              SizedBox(height: 20),
+
+              Container(
+                padding: EdgeInsets.symmetric(horizontal: 16),
+                decoration: BoxDecoration(
+                  color: Color(0xFF3A3A3A),
+                  borderRadius: BorderRadius.circular(20),
+                ),
+                child: TextField(
+                  controller: _ingredientController,
+                  maxLines: 6,
+                  style: TextStyle(color: Colors.white),
+                  decoration: InputDecoration(
+                    border: InputBorder.none,
+                    hintText: 'Enter ingredients..........',
+                    hintStyle: TextStyle(color: Colors.white70),
+                  ),
+                ),
+              ),
+              SizedBox(height: 30),
+
+              // Button
+              Center(
+                child: ElevatedButton(
+                  onPressed: () {},
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: Colors.grey.shade800,
+                    padding: EdgeInsets.symmetric(horizontal: 32, vertical: 12),
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(30),
+                    ),
+                  ),
+                  child: Text(
+                    'Generate Your Recipe',
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                ),
+              ),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+}
