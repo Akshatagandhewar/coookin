@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 
-
 class LoginPage extends StatelessWidget {
   const LoginPage({super.key});
 
@@ -11,37 +10,46 @@ class LoginPage extends StatelessWidget {
       body: SingleChildScrollView(
         child: Column(
           children: [
-            // Top Image
+            // ======= Top Veggies Image with Curve =======
             Stack(
-              alignment: Alignment.center,
+              clipBehavior: Clip.none,
               children: [
-                Image.asset(
-                  'assests/images/LoginpageVeg.jpg', // Your top image
-                  width: double.infinity,
-                  height: 250,
-                  fit: BoxFit.cover,
+                ClipRRect(
+                  borderRadius: const BorderRadius.only(
+                    bottomLeft: Radius.circular(60),
+                    bottomRight: Radius.circular(60),
+                  ),
+                  child: Image.asset(
+                    'assets/images/LoginpageVeg.jpg',
+                    width: double.infinity,
+                    height:300,
+                    fit: BoxFit.cover,
+                  ),
                 ),
+
+                // ======= Center Logo Circle =======
                 Positioned(
-                  bottom: -40,
+                  bottom: -50,
+                  left: 0,
+                  right: 0,
                   child: CircleAvatar(
-                    radius: 60,
-                    backgroundColor: Colors.amber[100],
+                    radius: 65,
+                    backgroundColor: const Color(0xFFFFF2CC),
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        Image.asset(
-                          'assets/images/logo.png', // Your logo
-                          width: 50,
-                        ),
+                        Image.asset('assets/images/download.png', width:50),
                         const SizedBox(height: 5),
                         const Text(
                           "COOKIN",
                           style: TextStyle(
-                              fontWeight: FontWeight.bold, fontSize: 18),
+                              fontWeight: FontWeight.bold,
+                              fontSize: 16,
+                              color: Colors.black),
                         ),
                         const Text(
                           "Tu Bol Apun Banayega",
-                          style: TextStyle(fontSize: 10),
+                          style: TextStyle(fontSize: 10, color: Colors.black54),
                         ),
                       ],
                     ),
@@ -49,108 +57,135 @@ class LoginPage extends StatelessWidget {
                 ),
               ],
             ),
-            const SizedBox(height: 60),
 
-            // Username Field
+            const SizedBox(height: 80), // Gap below logo
+
+            // ======= Username Field =======
             Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 30),
+              padding: EdgeInsets.symmetric(horizontal: 30),
               child: TextField(
                 decoration: InputDecoration(
-                  prefixIcon: const Icon(Icons.person),
-                  hintText: 'Username',
-                  border: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(8),
+                  hintText: "Username",
+                  prefixIcon:  Icon(Icons.person, color: Colors.black54),
+                  filled: true,
+                  fillColor: Colors.white,
+                  enabledBorder: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(12),
+                    borderSide:  BorderSide(color: Colors.black54),
+                  ),
+                  focusedBorder: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(12),
+                    borderSide:  BorderSide(color: Colors.red),
                   ),
                 ),
               ),
             ),
-            const SizedBox(height: 15),
+            SizedBox(height: 15),
 
-            // Password Field
+            // ======= Password Field =======
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 30),
               child: TextField(
                 obscureText: true,
                 decoration: InputDecoration(
-                  prefixIcon: const Icon(Icons.lock),
-                  hintText: 'Password',
-                  border: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(8),
+                  hintText: "Password",
+                  prefixIcon: const Icon(Icons.lock, color: Colors.black54),
+                  filled: true,
+                  fillColor: Colors.white,
+                  enabledBorder: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(12),
+                    borderSide: const BorderSide(color: Colors.black54),
+                  ),
+                  focusedBorder: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(12),
+                    borderSide: const BorderSide(color: Colors.red),
                   ),
                 ),
               ),
             ),
-            const SizedBox(height: 5),
 
-            // Forgot Password
+             SizedBox(height: 8),
+
+            // ======= Forgot Password =======
             Padding(
               padding: const EdgeInsets.only(right: 35),
               child: Align(
                 alignment: Alignment.centerRight,
-                child: TextButton(
-                  onPressed: () {},
-                  child: const Text(
-                    'Forgot Password?',
-                    style: TextStyle(fontSize: 12),
+                child: Text(
+                  "forget password?",
+                  style: TextStyle(
+                    fontSize: 12,
+                    color: Colors.blue.shade700,
                   ),
                 ),
               ),
             ),
 
-            // Buttons Row
+           SizedBox(height: 15),
+
+            // ======= Login and SignUp Buttons =======
             Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 30),
+              padding: EdgeInsets.symmetric(horizontal: 30),
               child: Row(
                 children: [
+                  // Login Button
                   Expanded(
                     child: ElevatedButton(
-                      onPressed: () {},
                       style: ElevatedButton.styleFrom(
-                        backgroundColor: Colors.red,
+                        backgroundColor: const Color(0xFFB80E0E), // Dark red
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(15),
+                        ),
+                        padding: const EdgeInsets.symmetric(vertical: 12),
                       ),
-                      child: const Text('Login Here'),
+                      onPressed: () {},
+                      child: const Text(
+                        "Login Here",
+                        style: TextStyle(color: Colors.white, fontSize: 14),
+                      ),
                     ),
                   ),
-                  const SizedBox(width: 10),
+                 SizedBox(width: 15),
+
+                  // Sign Up Button
                   Expanded(
                     child: OutlinedButton(
+                      style: OutlinedButton.styleFrom(
+                        side: const BorderSide(color: Colors.black),
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(15),
+                        ),
+                        padding: const EdgeInsets.symmetric(vertical: 12),
+                      ),
                       onPressed: () {},
-                      child: const Text('Sign Up'),
+                      child: const Text(
+                        "Sign Up",
+                        style: TextStyle(color: Colors.black, fontSize: 14),
+                      ),
                     ),
                   ),
                 ],
               ),
             ),
 
-            const SizedBox(height: 20),
-            const Text('or'),
+            SizedBox(height: 20),
+            Text("or", style: TextStyle(color: Colors.black54)),
 
-            const SizedBox(height: 15),
+            SizedBox(height: 20),
 
-            // Social Media Buttons
+            // ======= Social Media Buttons =======
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                IconButton(
-                  icon: Image.asset('assets/icons/facebook.png'),
-                  iconSize: 40,
-                  onPressed: () {},
-                ),
-                const SizedBox(width: 15),
-                IconButton(
-                  icon: Image.asset('assets/icons/google.png'),
-                  iconSize: 40,
-                  onPressed: () {},
-                ),
-                const SizedBox(width: 15),
-                IconButton(
-                  icon: Image.asset('assets/icons/x.png'), // Twitter/X icon
-                  iconSize: 40,
-                  onPressed: () {},
-                ),
+                Image.asset('assets/Logo/facebook.png', width: 35),
+                //const SizedBox(width: 20),
+                Image.asset('assets/Logo/google.png', width: 35),
+               // const SizedBox(width: 20),
+                Image.asset('assets/Logo/x-twitter.png', width: 35),
               ],
             ),
-            const SizedBox(height: 20),
+
+             SizedBox(height: 25),
           ],
         ),
       ),
