@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class LoginPage extends StatelessWidget {
-  const LoginPage({super.key});
+  LoginPage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -10,44 +10,43 @@ class LoginPage extends StatelessWidget {
       body: SingleChildScrollView(
         child: Column(
           children: [
-            // ======= Top Veggies Image with Curve =======
             Stack(
               clipBehavior: Clip.none,
               children: [
                 ClipRRect(
-                  borderRadius: const BorderRadius.only(
+                  borderRadius: BorderRadius.only(
                     bottomLeft: Radius.circular(60),
                     bottomRight: Radius.circular(60),
                   ),
                   child: Image.asset(
                     'assets/images/LoginpageVeg.jpg',
                     width: double.infinity,
-                    height:300,
+                    height: 300,
                     fit: BoxFit.cover,
                   ),
                 ),
 
-                // ======= Center Logo Circle =======
                 Positioned(
                   bottom: -50,
                   left: 0,
                   right: 0,
                   child: CircleAvatar(
                     radius: 65,
-                    backgroundColor: const Color(0xFFFFF2CC),
+                    backgroundColor: Color(0xFFFFF2CC),
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        Image.asset('assets/images/download.png', width:50),
-                        const SizedBox(height: 5),
-                        const Text(
+                        Image.asset('assets/images/download.png', width: 50),
+                        SizedBox(height: 5),
+                        Text(
                           "COOKIN",
                           style: TextStyle(
-                              fontWeight: FontWeight.bold,
-                              fontSize: 16,
-                              color: Colors.black),
+                            fontWeight: FontWeight.bold,
+                            fontSize: 16,
+                            color: Colors.black,
+                          ),
                         ),
-                        const Text(
+                        Text(
                           "Tu Bol Apun Banayega",
                           style: TextStyle(fontSize: 10, color: Colors.black54),
                         ),
@@ -58,24 +57,23 @@ class LoginPage extends StatelessWidget {
               ],
             ),
 
-            const SizedBox(height: 80), // Gap below logo
+            SizedBox(height: 80),
 
-            // ======= Username Field =======
             Padding(
               padding: EdgeInsets.symmetric(horizontal: 30),
               child: TextField(
                 decoration: InputDecoration(
                   hintText: "Username",
-                  prefixIcon:  Icon(Icons.person, color: Colors.black54),
+                  prefixIcon: Icon(Icons.person, color: Colors.black54),
                   filled: true,
                   fillColor: Colors.white,
                   enabledBorder: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(12),
-                    borderSide:  BorderSide(color: Colors.black54),
+                    borderSide: BorderSide(color: Colors.black54),
                   ),
                   focusedBorder: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(12),
-                    borderSide:  BorderSide(color: Colors.red),
+                    borderSide: BorderSide(color: Colors.red),
                   ),
                 ),
               ),
@@ -84,46 +82,41 @@ class LoginPage extends StatelessWidget {
 
             // ======= Password Field =======
             Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 30),
+              padding: EdgeInsets.symmetric(horizontal: 30),
               child: TextField(
                 obscureText: true,
                 decoration: InputDecoration(
                   hintText: "Password",
-                  prefixIcon: const Icon(Icons.lock, color: Colors.black54),
+                  prefixIcon: Icon(Icons.lock, color: Colors.black54),
                   filled: true,
                   fillColor: Colors.white,
                   enabledBorder: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(12),
-                    borderSide: const BorderSide(color: Colors.black54),
+                    borderSide: BorderSide(color: Colors.black54),
                   ),
                   focusedBorder: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(12),
-                    borderSide: const BorderSide(color: Colors.red),
+                    borderSide: BorderSide(color: Colors.red),
                   ),
                 ),
               ),
             ),
 
-             SizedBox(height: 8),
+            SizedBox(height: 8),
 
-            // ======= Forgot Password =======
             Padding(
-              padding: const EdgeInsets.only(right: 35),
+              padding: EdgeInsets.only(right: 35),
               child: Align(
                 alignment: Alignment.centerRight,
                 child: Text(
                   "forget password?",
-                  style: TextStyle(
-                    fontSize: 12,
-                    color: Colors.blue.shade700,
-                  ),
+                  style: TextStyle(fontSize: 12, color: Colors.blue.shade700),
                 ),
               ),
             ),
 
-           SizedBox(height: 15),
+            SizedBox(height: 15),
 
-            // ======= Login and SignUp Buttons =======
             Padding(
               padding: EdgeInsets.symmetric(horizontal: 30),
               child: Row(
@@ -132,33 +125,33 @@ class LoginPage extends StatelessWidget {
                   Expanded(
                     child: ElevatedButton(
                       style: ElevatedButton.styleFrom(
-                        backgroundColor: const Color(0xFFB80E0E), // Dark red
+                        backgroundColor: Color(0xFFB80E0E), // Dark red
                         shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(15),
                         ),
-                        padding: const EdgeInsets.symmetric(vertical: 12),
+                        padding: EdgeInsets.symmetric(vertical: 12),
                       ),
                       onPressed: () {},
-                      child: const Text(
+                      child: Text(
                         "Login Here",
                         style: TextStyle(color: Colors.white, fontSize: 14),
                       ),
                     ),
                   ),
-                 SizedBox(width: 15),
+                  SizedBox(width: 15),
 
                   // Sign Up Button
                   Expanded(
                     child: OutlinedButton(
                       style: OutlinedButton.styleFrom(
-                        side: const BorderSide(color: Colors.black),
+                        side: BorderSide(color: Colors.black),
                         shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(15),
                         ),
-                        padding: const EdgeInsets.symmetric(vertical: 12),
+                        padding: EdgeInsets.symmetric(vertical: 12),
                       ),
                       onPressed: () {},
-                      child: const Text(
+                      child: Text(
                         "Sign Up",
                         style: TextStyle(color: Colors.black, fontSize: 14),
                       ),
@@ -173,19 +166,18 @@ class LoginPage extends StatelessWidget {
 
             SizedBox(height: 20),
 
-            // ======= Social Media Buttons =======
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Image.asset('assets/Logo/facebook.png', width: 35),
-                //const SizedBox(width: 20),
+
                 Image.asset('assets/Logo/google.png', width: 35),
-               // const SizedBox(width: 20),
+
                 Image.asset('assets/Logo/x-twitter.png', width: 35),
               ],
             ),
 
-             SizedBox(height: 25),
+            SizedBox(height: 25),
           ],
         ),
       ),

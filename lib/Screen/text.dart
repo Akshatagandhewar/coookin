@@ -4,10 +4,10 @@ class Textscreen extends StatefulWidget {
   Textscreen({Key? key}) : super(key: key);
 
   @override
-  State<Textscreen> createState() => _IngredientEntryScreenState();
+  State<Textscreen> createState() => _TextScreenState();
 }
 
-class _IngredientEntryScreenState extends State<Textscreen> {
+class _TextScreenState extends State<Textscreen> {
   final TextEditingController _ingredientController = TextEditingController();
 
   int _currentIndex = 0;
@@ -41,6 +41,7 @@ class _IngredientEntryScreenState extends State<Textscreen> {
               SizedBox(height: 20),
 
               Center(
+                
                 child: CircleAvatar(
                   radius: 40,
                   backgroundColor: Colors.grey,
@@ -49,26 +50,29 @@ class _IngredientEntryScreenState extends State<Textscreen> {
               ),
               SizedBox(height: 20),
 
-              Container(
-                padding: EdgeInsets.symmetric(horizontal: 16),
-                decoration: BoxDecoration(
-                  color: Color(0xFF3A3A3A),
-                  borderRadius: BorderRadius.circular(20),
-                ),
-                child: TextField(
-                  controller: _ingredientController,
-                  maxLines: 6,
-                  style: TextStyle(color: Colors.white),
-                  decoration: InputDecoration(
-                    border: InputBorder.none,
-                    hintText: 'Enter ingredients..........',
-                    hintStyle: TextStyle(color: Colors.white70),
+              Center(
+                child: Container(
+                  width: 650,
+                  height: 400,
+                  padding: EdgeInsets.symmetric(horizontal: 16),
+                  decoration: BoxDecoration(
+                    color: Color(0xFF3A3A3A),
+                    borderRadius: BorderRadius.circular(20),
+                  ),
+                  child: TextField(
+                    controller: _ingredientController,
+                    maxLines: 6,
+                    style: TextStyle(color: Colors.white),
+                    decoration: InputDecoration(
+                      border: InputBorder.none,
+                      hintText: 'Enter ingredients..........',
+                      hintStyle: TextStyle(color: Colors.white70),
+                    ),
                   ),
                 ),
               ),
               SizedBox(height: 30),
 
-              // Button
               Center(
                 child: ElevatedButton(
                   onPressed: () {},
