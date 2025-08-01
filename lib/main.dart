@@ -1,13 +1,15 @@
 import 'package:cookin/Screen/Hompage.dart';
+import 'package:cookin/Screen/scan.dart';
+import 'package:cookin/Screen/text.dart';
 
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp( MyApp());
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+   MyApp({super.key});
 
   // This widget is the root of your application.
   @override
@@ -32,12 +34,10 @@ class MyApp extends StatelessWidget {
         // tested with just a hot reload.
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
       ),
-      home: const HomPage(),
+      home:  ScanScreen(),
     );
   }
-//idfjdsjlfjdsilmds
-//erkjneklnterlnternklern
-//dfguguihadwa;9osruQI'
+
 }
 
 
